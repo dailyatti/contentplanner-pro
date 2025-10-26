@@ -1,4 +1,4 @@
-export type ViewType = 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'notes' | 'goals' | 'drawing' | 'budget' | 'settings';
+export type ViewType = 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'notes' | 'goals' | 'drawing' | 'budget' | 'pomodoro' | 'statistics' | 'settings';
 
 export interface Note {
   id: string;

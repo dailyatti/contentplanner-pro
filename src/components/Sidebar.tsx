@@ -2,7 +2,7 @@ import React from 'react';
 import { 
   Clock, Calendar, CalendarDays, CalendarRange, 
   CalendarCheck, StickyNote, Target, Brush,
-  X, DollarSign
+  X, DollarSign, Timer, BarChart3
 } from 'lucide-react';
 import { ViewType } from '../types/planner';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -27,6 +27,8 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onViewChange, isOpen, onC
     { id: 'goals' as ViewType, label: t('nav.goals'), icon: Target, color: 'text-teal-500' },
     { id: 'drawing' as ViewType, label: t('nav.visualPlanning'), icon: Brush, color: 'text-pink-500' },
     { id: 'budget' as ViewType, label: t('nav.budgetTracker'), icon: DollarSign, color: 'text-emerald-500' },
+    { id: 'pomodoro' as ViewType, label: t('nav.pomodoroTimer'), icon: Timer, color: 'text-rose-500' },
+    { id: 'statistics' as ViewType, label: t('nav.statistics'), icon: BarChart3, color: 'text-indigo-500' },
   ];
 
   return (

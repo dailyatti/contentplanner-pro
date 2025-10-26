@@ -82,6 +82,22 @@ const translations: Translations = {
     es: 'Seguimiento de Presupuesto',
     it: 'Tracciamento Budget'
   },
+  'nav.pomodoroTimer': {
+    en: 'Pomodoro Timer',
+    hu: 'Pomodoro Időmérő',
+    de: 'Pomodoro-Timer',
+    fr: 'Minuteur Pomodoro',
+    es: 'Temporizador Pomodoro',
+    it: 'Timer Pomodoro'
+  },
+  'nav.statistics': {
+    en: 'Statistics',
+    hu: 'Statisztikák',
+    de: 'Statistiken',
+    fr: 'Statistiques',
+    es: 'Estadísticas',
+    it: 'Statistiche'
+  },
   'nav.navigation': {
     en: 'Navigation',
     hu: 'Navigáció',

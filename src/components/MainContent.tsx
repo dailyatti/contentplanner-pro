@@ -9,6 +9,8 @@ import NotesView from './views/NotesView';
 import GoalsView from './views/GoalsView';
 import DrawingView from './views/DrawingView';
 import BudgetView from './views/BudgetView';
+import PomodoroView from './views/PomodoroView';
+import StatisticsView from './views/StatisticsView';
 import SettingsView from './views/SettingsView';
 
 interface MainContentProps {
@@ -37,6 +39,10 @@ const MainContent: React.FC<MainContentProps> = ({ activeView, sidebarOpen }) =>
         return <DrawingView />;
       case 'budget':
         return <BudgetView />;
+      case 'pomodoro':
+        return <PomodoroView />;
+      case 'statistics':
+        return <StatisticsView />;
       case 'settings':
         return <SettingsView />;
       default:
@@ -57,3 +63,4 @@ const MainContent: React.FC<MainContentProps> = ({ activeView, sidebarOpen }) =>
 };
 
 export default MainContent;
+
