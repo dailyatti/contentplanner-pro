@@ -2,7 +2,7 @@ import React from 'react';
 import { 
   Clock, Calendar, CalendarDays, CalendarRange, 
   CalendarCheck, StickyNote, Target, Brush,
-  X, DollarSign, Timer, BarChart3
+  DollarSign, Timer, BarChart3
 } from 'lucide-react';
 import { ViewType } from '../types/planner';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -31,41 +31,55 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onViewChange, isOpen, onC
     { id: 'statistics' as ViewType, label: t('nav.statistics'), icon: BarChart3, color: 'text-indigo-500' },
   ];
 
+  const handleItemClick = (viewId: ViewType) => {
+    onViewChange(viewId);
+    // Auto-close on mobile after selection
+    if (window.innerWidth < 768) {
+      onClose();
+    }
+  };
+
   return (
     <>
-      {/* Mobile overlay */}
+      {/* Mobile Overlay - Click to close */}
       {isOpen && (
         <div 
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden transition-opacity duration-200"
           onClick={onClose}
+          aria-hidden="true"
         />
       )}
 
       {/* Sidebar */}
-      <div className={`
-        fixed md:static inset-y-0 left-0 z-40 w-72 bg-white dark:bg-gray-800 
-        border-r border-gray-200 dark:border-gray-700 transform transition-transform duration-300
-        ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
-      `}>
-        <div className="flex flex-col h-full pt-16 md:pt-6">
-          {/* Mobile close button */}
-          <div className="md:hidden flex justify-end p-4">
-            <button
-              onClick={onClose}
-              className="p-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
-            >
-              <X size={20} />
-            </button>
+      <aside 
+        className={`
+          fixed md:static top-14 md:top-0 bottom-0 left-0 z-50 
+          w-72 bg-white dark:bg-gray-800 
+          border-r border-gray-200 dark:border-gray-700 
+          transform transition-transform duration-300 ease-in-out
+          ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+        `}
+        style={{
+          paddingTop: 'env(safe-area-inset-top)',
+          paddingBottom: 'env(safe-area-inset-bottom)',
+        }}
+      >
+        <div className="flex flex-col h-full">
+          {/* Header */}
+          <div className="px-4 py-4 md:py-6 border-b border-gray-200 dark:border-gray-700">
+            <h2 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white">
+              {t('nav.navigation')}
+            </h2>
           </div>
 
-          {/* Navigation */}
-          <nav className="flex-1 px-4 pb-4 space-y-2">
-            <div className="mb-6">
-              <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                {t('nav.navigation')}
-              </h2>
-            </div>
-
+          {/* Navigation Menu */}
+          <nav 
+            className="flex-1 px-3 py-4 space-y-1 overflow-y-auto overflow-x-hidden"
+            style={{
+              WebkitOverflowScrolling: 'touch',
+              scrollBehavior: 'smooth',
+            }}
+          >
             {menuItems.map((item) => {
               const Icon = item.icon;
               const isActive = activeView === item.id;
@@ -73,37 +87,48 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onViewChange, isOpen, onC
               return (
                 <button
                   key={item.id}
-                  onClick={() => {
-                    onViewChange(item.id);
-                    onClose();
-                  }}
+                  onClick={() => handleItemClick(item.id)}
                   className={`
-                    w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200
+                    w-full flex items-center gap-3 px-3 py-3 rounded-lg 
+                    transition-all duration-200 text-left
+                    min-h-[48px]
                     ${isActive 
-                      ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800' 
-                      : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                      ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 shadow-sm' 
+                      : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700/50'
                     }
+                    active:scale-95
                   `}
+                  aria-current={isActive ? 'page' : undefined}
                 >
-                  <Icon size={20} className={isActive ? 'text-blue-500' : item.color} />
-                  <span className="font-medium">{item.label}</span>
+                  <Icon 
+                    size={20} 
+                    className={`flex-shrink-0 ${isActive ? item.color : ''}`}
+                  />
+                  <span className="font-medium text-sm md:text-base truncate">
+                    {item.label}
+                  </span>
+                  {isActive && (
+                    <div className="ml-auto w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400 animate-pulse" />
+                  )}
                 </button>
               );
             })}
           </nav>
 
           {/* Footer */}
-          <div className="p-4 border-t border-gray-200 dark:border-gray-700">
-            <div className="text-sm text-gray-500 dark:text-gray-400 text-center">
+          <div className="px-4 py-3 border-t border-gray-200 dark:border-gray-700">
+            <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
               ContentPlanner Pro v1.0
-              <br />
+            </p>
+            <p className="text-xs text-gray-400 dark:text-gray-500 text-center mt-1">
               Professional Planning Suite
-            </div>
+            </p>
           </div>
         </div>
-      </div>
+      </aside>
     </>
   );
 };
 
 export default Sidebar;
+

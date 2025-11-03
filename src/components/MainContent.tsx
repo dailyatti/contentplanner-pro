@@ -51,12 +51,29 @@ const MainContent: React.FC<MainContentProps> = ({ activeView, sidebarOpen }) =>
   };
 
   return (
-    <main className={`
-      flex-1 transition-all duration-300 pt-16 md:pt-0
-      ${sidebarOpen ? 'md:ml-72' : 'md:ml-72'}
-    `}>
-      <div className="h-[calc(100vh-4rem)] md:h-screen overflow-auto">
-        {renderView()}
+    <main 
+      className="flex-1 transition-all duration-300 md:ml-72"
+      style={{
+        // Mobile: Account for fixed header (56px)
+        // Desktop: Full height (header is static)
+        paddingTop: 'env(safe-area-inset-top)',
+      }}
+    >
+      <div 
+        className="overflow-y-auto overflow-x-hidden"
+        style={{
+          // Mobile: viewport height - header height (56px)
+          // Desktop: full viewport height
+          height: 'calc(100vh - 56px)',
+          // Smooth scrolling
+          scrollBehavior: 'smooth',
+          WebkitOverflowScrolling: 'touch',
+        }}
+      >
+        {/* Content wrapper with proper padding */}
+        <div className="min-h-full pt-14 md:pt-0">
+          {renderView()}
+        </div>
       </div>
     </main>
   );
