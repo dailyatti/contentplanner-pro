@@ -98,6 +98,202 @@ const translations: Translations = {
     es: 'Estadísticas',
     it: 'Statistiche'
   },
+
+  // Header
+  'header.lightTheme': {
+    en: 'Light Theme',
+    hu: 'Világos Téma',
+    de: 'Helles Thema',
+    fr: 'Thème Clair',
+    es: 'Tema Claro',
+    it: 'Tema Chiaro'
+  },
+  'header.darkTheme': {
+    en: 'Dark Theme',
+    hu: 'Sötét Téma',
+    de: 'Dunkles Thema',
+    fr: 'Thème Sombre',
+    es: 'Tema Oscuro',
+    it: 'Tema Scuro'
+  },
+  'header.importExport': {
+    en: 'Import/Export',
+    hu: 'Importálás/Exportálás',
+    de: 'Import/Export',
+    fr: 'Importer/Exporter',
+    es: 'Importar/Exportar',
+    it: 'Importa/Esporta'
+  },
+  'header.settings': {
+    en: 'Settings',
+    hu: 'Beállítások',
+    de: 'Einstellungen',
+    fr: 'Paramètres',
+    es: 'Configuración',
+    it: 'Impostazioni'
+  },
+
+  // Pomodoro Timer
+  'pomodoro.title': {
+    en: 'Pomodoro Timer',
+    hu: 'Pomodoro Időmérő',
+    de: 'Pomodoro-Timer',
+    fr: 'Minuteur Pomodoro',
+    es: 'Temporizador Pomodoro',
+    it: 'Timer Pomodoro'
+  },
+  'pomodoro.subtitle': {
+    en: 'Boost your productivity with focused work sessions',
+    hu: 'Növeld a produktivitásod fókuszált munkamenetekkel',
+    de: 'Steigern Sie Ihre Produktivität mit fokussierten Arbeitssitzungen',
+    fr: 'Augmentez votre productivité avec des sessions de travail ciblées',
+    es: 'Aumenta tu productividad con sesiones de trabajo enfocadas',
+    it: 'Aumenta la tua produttività con sessioni di lavoro mirate'
+  },
+  'pomodoro.focusTime': {
+    en: 'Focus Time',
+    hu: 'Fókuszidő',
+    de: 'Fokuszeit',
+    fr: 'Temps de Concentration',
+    es: 'Tiempo de Enfoque',
+    it: 'Tempo di Concentrazione'
+  },
+  'pomodoro.shortBreak': {
+    en: 'Short Break',
+    hu: 'Rövid Szünet',
+    de: 'Kurze Pause',
+    fr: 'Courte Pause',
+    es: 'Descanso Corto',
+    it: 'Pausa Breve'
+  },
+  'pomodoro.longBreak': {
+    en: 'Long Break',
+    hu: 'Hosszú Szünet',
+    de: 'Lange Pause',
+    fr: 'Longue Pause',
+    es: 'Descanso Largo',
+    it: 'Pausa Lunga'
+  },
+  'pomodoro.session': {
+    en: 'Session',
+    hu: 'Munkamenet',
+    de: 'Sitzung',
+    fr: 'Session',
+    es: 'Sesión',
+    it: 'Sessione'
+  },
+  'pomodoro.start': {
+    en: 'Start',
+    hu: 'Indítás',
+    de: 'Start',
+    fr: 'Démarrer',
+    es: 'Iniciar',
+    it: 'Avvia'
+  },
+  'pomodoro.pause': {
+    en: 'Pause',
+    hu: 'Szünet',
+    de: 'Pause',
+    fr: 'Pause',
+    es: 'Pausa',
+    it: 'Pausa'
+  },
+  'pomodoro.reset': {
+    en: 'Reset',
+    hu: 'Visszaállítás',
+    de: 'Zurücksetzen',
+    fr: 'Réinitialiser',
+    es: 'Reiniciar',
+    it: 'Ripristina'
+  },
+  'pomodoro.completed': {
+    en: 'Completed',
+    hu: 'Befejezett',
+    de: 'Abgeschlossen',
+    fr: 'Terminé',
+    es: 'Completado',
+    it: 'Completato'
+  },
+  'pomodoro.pomodoros': {
+    en: 'Pomodoros',
+    hu: 'Pomodoro',
+    de: 'Pomodoros',
+    fr: 'Pomodoros',
+    es: 'Pomodoros',
+    it: 'Pomodori'
+  },
+  'pomodoro.tip1': {
+    en: 'Click Start to begin a 25-minute focus session',
+    hu: 'Kattints az Indításra egy 25 perces fókusz munkamenet kezdéséhez',
+    de: 'Klicken Sie auf Start, um eine 25-minütige Fokussitzung zu beginnen',
+    fr: 'Cliquez sur Démarrer pour commencer une session de concentration de 25 minutes',
+    es: 'Haz clic en Iniciar para comenzar una sesión de enfoque de 25 minutos',
+    it: 'Fai clic su Avvia per iniziare una sessione di concentrazione di 25 minuti'
+  },
+  'pomodoro.tip2': {
+    en: 'Work with full concentration until the timer rings',
+    hu: 'Dolgozz teljes koncentrációval, amíg az időmérő csörög',
+    de: 'Arbeiten Sie mit voller Konzentration, bis der Timer klingelt',
+    fr: 'Travaillez avec une concentration totale jusqu\'à ce que la minuterie sonne',
+    es: 'Trabaja con total concentración hasta que suene el temporizador',
+    it: 'Lavora con piena concentrazione finché il timer non suona'
+  },
+  'pomodoro.tip3': {
+    en: 'Take a 5-minute break after each session',
+    hu: 'Tarts 5 perces szünetet minden munkamenet után',
+    de: 'Machen Sie nach jeder Sitzung eine 5-minütige Pause',
+    fr: 'Prenez une pause de 5 minutes après chaque session',
+    es: 'Toma un descanso de 5 minutos después de cada sesión',
+    it: 'Fai una pausa di 5 minuti dopo ogni sessione'
+  },
+  'pomodoro.tip4': {
+    en: 'After 4 pomodoros, take a longer 15-minute break',
+    hu: '4 pomodoro után tarts egy hosszabb, 15 perces szünetet',
+    de: 'Machen Sie nach 4 Pomodoros eine längere 15-minütige Pause',
+    fr: 'Après 4 pomodoros, prenez une pause plus longue de 15 minutes',
+    es: 'Después de 4 pomodoros, toma un descanso más largo de 15 minutos',
+    it: 'Dopo 4 pomodori, fai una pausa più lunga di 15 minuti'
+  },
+  'pomodoro.tip5': {
+    en: 'Eliminate all distractions during work time',
+    hu: 'Küszöbölj ki minden zavaró tényezőt munkaidő alatt',
+    de: 'Beseitigen Sie alle Ablenkungen während der Arbeitszeit',
+    fr: 'Éliminez toutes les distractions pendant le temps de travail',
+    es: 'Elimina todas las distracciones durante el tiempo de trabajo',
+    it: 'Elimina tutte le distrazioni durante il tempo di lavoro'
+  },
+  'pomodoro.tip6': {
+    en: 'Use the Pause button if you need to step away temporarily',
+    hu: 'Használd a Szünet gombot, ha ideiglenesen el kell távolodnod',
+    de: 'Verwenden Sie die Pause-Taste, wenn Sie sich vorübergehend entfernen müssen',
+    fr: 'Utilisez le bouton Pause si vous devez vous éloigner temporairement',
+    es: 'Usa el botón Pausa si necesitas alejarte temporalmente',
+    it: 'Usa il pulsante Pausa se devi allontanarti temporaneamente'
+  },
+  'pomodoro.tip7': {
+    en: 'Click Reset to restart the current timer',
+    hu: 'Kattints a Visszaállításra az aktuális időmérő újraindításához',
+    de: 'Klicken Sie auf Zurücksetzen, um den aktuellen Timer neu zu starten',
+    fr: 'Cliquez sur Réinitialiser pour redémarrer la minuterie actuelle',
+    es: 'Haz clic en Reiniciar para reiniciar el temporizador actual',
+    it: 'Fai clic su Ripristina per riavviare il timer corrente'
+  },
+  'pomodoro.tip8': {
+    en: 'Track your daily progress with the statistics cards above',
+    hu: 'Kövesd a napi előrehaladásod a fenti statisztikai kártyákon',
+    de: 'Verfolgen Sie Ihren täglichen Fortschritt mit den Statistikkarten oben',
+    fr: 'Suivez vos progrès quotidiens avec les cartes statistiques ci-dessus',
+    es: 'Rastrea tu progreso diario con las tarjetas de estadísticas de arriba',
+    it: 'Traccia i tuoi progressi giornalieri con le schede statistiche sopra'
+  },
+  'pomodoro.howToUse': {
+    en: 'How to Use Pomodoro Timer',
+    hu: 'Hogyan Használd a Pomodoro Időmérőt',
+    de: 'So verwenden Sie den Pomodoro-Timer',
+    fr: 'Comment Utiliser le Minuteur Pomodoro',
+    es: 'Cómo Usar el Temporizador Pomodoro',
+    it: 'Come Usare il Timer Pomodoro'
+  },
   'nav.navigation': {
     en: 'Navigation',
     hu: 'Navigáció',
